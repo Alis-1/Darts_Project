@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Darts Game Setup</h1>
+      <h1>Darts Game</h1>
       <PlayerInput players={players} setPlayers={setPlayers} />
       <GameModeSelector gameMode={gameMode} setGameMode={setGameMode} />
       <button onClick={handleStartGame}>Start Game</button>
