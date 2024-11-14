@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PlayerInput from './components/PlayerInput';
 import GameModeSelector from './components/GameModeSelector';
+import './App.css';
 
 function App() {
   const [players, setPlayers] = useState([]);
