@@ -1,3 +1,3 @@
-Tämä projekti on toteutettu ryhmätyönä ja tarkoituksena on suunnitella web-sovellus joka laskee dartsin pisteitä.
+This project is a group effort to design a web application that calculates darts scores.
 
-Kommunikoimme ryhmmänä discordin kautta ainakin toistaiseksi.
+We communicate as a group via discord, at least for now.
