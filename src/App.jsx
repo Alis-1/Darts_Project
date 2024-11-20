@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import PlayerInput from './components/PlayerInput';
 import GameModeSelector from './components/GameModeSelector';
-import './App.css';
+import './index.css';
 
 function App() {
+  // Alustetaan pelaajat, pelimuoto ja pelin aloitustila
   const [players, setPlayers] = useState([]);
-  const [gameMode, setGameMode] = useState("301");
+  const [gameMode, setGameMode] = useState("301");  //esimerkin pelimuoto, joka valitaan oletusarvoksi.
 
   const handleStartGame = () => {
+    console.log("Button clicked");
     if (players.length >= 2) {
       console.log("Game starting with players:", players, "and mode:", gameMode);
       // Siirry pelinäkymään tai luo peliolion tila
@@ -15,6 +17,7 @@ function App() {
       alert("Please add at least two players!");
     }
   };
+
 
   return (
     <div className="App">
