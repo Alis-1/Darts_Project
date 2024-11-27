@@ -1,19 +1,28 @@
-#root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-  
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
-}
 
-.App {
+#app {
   text-align: center;
 }
 
+body {
+  background-color: #333; /* Tummanharmaa väri */
+  color: white;
+}
+
 h1 {
-  color: black;
+  font-size: 60px;
+}
+
+#gamemode {
+  border: 2px solid #007bff;
+  padding: 10px; 
+  border-radius: 10px; 
+  display: inline-block; 
+  margin: 10px; 
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#gamemode:hover {
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
 }
 
 input {

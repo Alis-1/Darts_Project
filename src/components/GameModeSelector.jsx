@@ -5,8 +5,8 @@ function GameModeSelector() {
   const { gameMode, setGameMode } = useContext(GameContext);
 
   return (
-    <div>
-      <h2>Select Game Mode</h2>
+    <div id='gamemode'>
+      <h2>Game Mode</h2>
       <label>
         <input
           type="radio"
