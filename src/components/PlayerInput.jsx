@@ -1,6 +1,8 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { GameContext } from "../GameContext";
 
-function PlayerInput({ players, setPlayers }) {
+function PlayerInput() {
+  const { players, setPlayers } = useContext(GameContext);
   const [newPlayer, setNewPlayer] = useState("");
 
   const handleAddPlayer = () => {

@@ -1,6 +1,9 @@
+import { useContext } from 'react'
+import { GameContext } from "../GameContext";
 
+function GameModeSelector() {
+  const { gameMode, setGameMode } = useContext(GameContext);
 
-function GameModeSelector({ gameMode, setGameMode }) {
   return (
     <div>
       <h2>Select Game Mode</h2>
