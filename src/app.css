@@ -1,5 +1,17 @@
 #app {
-  text-align: center;
+  width: 80%;
+  height: 80vh;
+  margin: 0 auto;
+  border: 2px solid #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./assets/Designer.png'); /* Polku taustakuvaan */
+  background-size: cover; /* Kuva täyttää koko taustan */
+  background-position: center; /* Kuva keskitetään */
+  background-repeat: no-repeat; /* Kuva ei toistu */
 }
 
 body {
@@ -12,7 +24,6 @@ h1 {
 }
 
 #gamemode {
-  border: 2px solid #007bff;
   padding: 10px; 
   border-radius: 10px; 
   display: inline-block; 
@@ -28,6 +39,21 @@ input {
   padding: 10px;
   font-size: 16px;
   margin: 5px;
+}
+
+#scoreboard {
+  padding: 10px; 
+  border-radius: 10px; 
+  display: inline-block; 
+  margin: 10px; 
+  transition: box-shadow 0.3s ease-in-out;
+  position: absolute;
+  top: 1px;
+  right: 195px;
+  background-color: #333; /* Dark background */
+  border: 2px solid #000; /* Dark border */
+  height: 75vh; /* Increased height to display all players */
+  overflow-y: auto; /* Add scroll if content overflows */
 }
 
 button {
