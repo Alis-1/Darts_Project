@@ -1,31 +1,55 @@
-// components/Scoreboard.js
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Box, Button, Typography, TextField } from '@mui/material';
+import { GameContext } from "../GameContext";
 
 const Scoreboard = () => {
-  const [score, setScore] = useState(0);
+  const { players, setPlayers } = useContext(GameContext);
   const [inputValue, setInputValue] = useState('');
+  const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
 
   const handleAddScore = () => {
-    setScore(score + parseInt(inputValue));
-    setInputValue('');
+    if (inputValue.trim() !== '') {
+      const newScore = parseInt(inputValue);
+      const updatedPlayers = players.map((player, index) => {
+        if (index === currentPlayerIndex) {
+          return { ...player, score: player.score + newScore };
+        }
+        return player;
+      });
+      setPlayers(updatedPlayers);
+      setInputValue('');
+      setCurrentPlayerIndex((currentPlayerIndex + 1) % players.length);
+    }
+  };
+
+  const handleDeclareWinner = () => {
+    const winner = players.reduce((prev, current) => (prev.score > current.score ? prev : current));
+    alert(`The winner is ${winner.name} with ${winner.score} points!`);
   };
 
   return (
     <Box sx={{ textAlign: 'center', mt: 5 }}>
       <Typography variant="h4">Scoreboard</Typography>
-      <Typography variant="h6" sx={{ mt: 2 }}>Current Score: {score}</Typography>
+      <Typography variant="h6" sx={{ mt: 2 }}>Current Player: {players[currentPlayerIndex]?.name}</Typography>
       <TextField
         label="Add Points"
-        display="flex"
         variant="outlined"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
+        onKeyDown={(e) => e.key === 'Enter' && handleAddScore()} // Enter-näppäimen käsittely
         sx={{ mt: 2 }}
       />
       <Button variant="contained" color="primary" onClick={handleAddScore} sx={{ mt: 2 }}>
         Add Score
       </Button>
+      <Button variant="contained" color="secondary" onClick={handleDeclareWinner} sx={{ mt: 2, ml: 2 }}>
+        Declare Winner
+      </Button>
+      <ul>
+        {players.map((player, index) => (
+          <li key={index}>{player.name}: {player.score} points</li>
+        ))}
+      </ul>
     </Box>
   );
 };
