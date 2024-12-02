@@ -1,9 +1,7 @@
-/* eslint-disable react/prop-types */
 import { createContext, useState } from "react";
 
 // Luo konteksti
 export const GameContext = createContext();
-
 
 // Luo Provider-komponentti
 export const GameProvider = ({ children }) => {
@@ -19,4 +17,3 @@ export const GameProvider = ({ children }) => {
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
 };
-
