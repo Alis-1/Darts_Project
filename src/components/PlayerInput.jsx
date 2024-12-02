@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useState } from 'react';
 import { GameContext } from "../GameContext";
 
 function PlayerInput() {
@@ -7,7 +7,7 @@ function PlayerInput() {
 
   const handleAddPlayer = () => {
     if (newPlayer.trim() !== "") {
-      setPlayers([...players, newPlayer.trim()]);
+      setPlayers([...players, { name: newPlayer.trim(), score: 0, setsWon: 0 }]);
       setNewPlayer("");
     }
   };
@@ -33,7 +33,7 @@ function PlayerInput() {
 
       <ul>
         {players.map((player, index) => (
-          <li key={index}>{player}</li>
+          <li key={index}>{player.name}</li>
         ))}
       </ul>
     </div>
