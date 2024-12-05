@@ -10,7 +10,6 @@ function App() {
   return (
     <GameProvider>
       <Container>
-        <h1>Welcome to Darts Game</h1>
         <GameModeSelector />
         <PlayerInput />
         <Scoreboard />

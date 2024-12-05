@@ -24,7 +24,7 @@ function PlayerInput() {
   };
 
   return (
-    <div>
+    <div id='playerinput'>
       <h2>Add Players</h2>
       <input
         type="text"

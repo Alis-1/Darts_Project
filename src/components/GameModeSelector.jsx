@@ -7,6 +7,7 @@ function GameModeSelector() {
   return (
     <div id='gamemode'>
       <h2>Game Mode</h2>
+      <p>Welcome to the Darts Game! Please select a game mode to start playing.</p>
       <label>
         <input
           type="radio"
@@ -28,5 +29,6 @@ function GameModeSelector() {
     </div>
   );
 }
+
 
 export default GameModeSelector;
