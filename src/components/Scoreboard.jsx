@@ -12,7 +12,16 @@ const Scoreboard = () => {
       const newScore = parseInt(inputValue);
       const updatedPlayers = players.map((player, index) => {
         if (index === currentPlayerIndex) {
-          return { ...player, score: player.score + newScore };
+          if ((player.score - newScore) < 0){
+            alert("Invalid score, results in negative")
+          }
+          if (player.score - newScore == 0){
+            alert(player.name + " wins!")
+            
+          }
+          else{
+            return { ...player, score: player.score - newScore };
+          }
         }
         return player;
       });
@@ -23,7 +32,7 @@ const Scoreboard = () => {
   };
 
   const handleDeclareWinner = () => {
-    const winner = players.reduce((prev, current) => (prev.score > current.score ? prev : current));
+    const winner = players.reduce((prev, current) => (prev.score < current.score ? prev : current));
     alert(`The winner is ${winner.name} with ${winner.score} points!`);
   };
 
