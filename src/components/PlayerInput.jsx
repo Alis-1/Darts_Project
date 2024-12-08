@@ -2,12 +2,16 @@ import { useContext, useState } from 'react';
 import { GameContext } from "../GameContext";
 
 function PlayerInput() {
-  const { players, setPlayers, removePlayer } = useContext(GameContext);
+  const { gameMode, players, setPlayers, removePlayer } = useContext(GameContext);
   const [newPlayer, setNewPlayer] = useState("");
 
   const handleAddPlayer = () => {
-    if (newPlayer.trim() !== "") {
-      setPlayers([...players, { name: newPlayer.trim(), score: 0, setsWon: 0 }]);
+    if (newPlayer.trim() !== "" && gameMode == "301") {
+      setPlayers([...players, { name: newPlayer.trim(), score: 301, setsWon: 0 }]);
+      setNewPlayer("");
+    }
+    else if (newPlayer.trim() !== "" && gameMode == "501") {
+      setPlayers([...players, { name: newPlayer.trim(), score: 501, setsWon: 0 }]);
       setNewPlayer("");
     }
   };
@@ -24,7 +28,7 @@ function PlayerInput() {
   };
 
   return (
-    <div>
+    <div id='playerinput'>
       <h2>Add Players</h2>
       <input
         type="text"

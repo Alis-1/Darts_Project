@@ -29,9 +29,34 @@ h1 {
   display: inline-block; 
   margin: 10px; 
   transition: box-shadow 0.3s ease-in-out;
+  position: absolute;
+  top: 10px;
+  left: 200px;
+  background-color: #444;
+  color: white;
+  border: 2px solid #000;
 }
 
 #gamemode:hover {
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+}
+
+#playerinput {
+  padding: 10px; 
+  border-radius: 10px; 
+  display: inline-block; 
+  margin: 10px; 
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  position: absolute;
+  background-color: #444;
+  color: white;
+  border: 2px solid #000;
+  top: 170px;
+  left: 200px;
+  overflow-y: auto;
+}
+
+#playerinput:hover {
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
 }
 
@@ -46,11 +71,12 @@ input {
   border-radius: 10px; 
   display: inline-block; 
   margin: 10px; 
-  transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
   position: absolute;
   top: 1px;
   right: 195px;
-  background-color: #333; /* Dark background */
+  background-color: #444; /* Dark background */
+  color: white;
   border: 2px solid #000; /* Dark border */
   height: 75vh; /* Increased height to display all players */
   overflow-y: auto; /* Add scroll if content overflows */
