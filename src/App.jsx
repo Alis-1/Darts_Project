@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Container } from '@mui/material';
 import PlayerInput from './components/PlayerInput';
 import GameModeSelector from './components/GameModeSelector';
