@@ -1,5 +1,4 @@
 import { useContext, useState } from 'react';
-import { Box, Button, Typography, TextField } from '@mui/material';
 import { GameContext } from "../GameContext";
 
 const Scoreboard = () => {
@@ -12,14 +11,12 @@ const Scoreboard = () => {
       const newScore = parseInt(inputValue);
       const updatedPlayers = players.map((player, index) => {
         if (index === currentPlayerIndex) {
-          if ((player.score - newScore) < 0){
-            alert("Invalid score, results in negative")
+          if ((player.score - newScore) < 0) {
+            alert("Invalid score, results in negative");
           }
-          if (player.score - newScore == 0){
-            alert(player.name + " wins!")
-            
-          }
-          else{
+          if (player.score - newScore === 0) {
+            alert(player.name + " wins!");
+          } else {
             return { ...player, score: player.score - newScore };
           }
         }
@@ -37,32 +34,27 @@ const Scoreboard = () => {
   };
 
   return (
-    <Box id='scoreboard' sx={{ textAlign: 'center', mt: 5 }}>
-      <Typography variant="h4">Scoreboard</Typography>
-      <Typography variant="h6" sx={{ mt: 2 }}>Current Player: {players[currentPlayerIndex]?.name}</Typography>
-      <TextField
-        color='primary'
-        label="Add Points"
-        variant="outlined"
+    <div id="scoreboard">
+      <h2>Scoreboard</h2>
+      <h3>Current Player: {players[currentPlayerIndex]?.name}</h3>
+      <input
+        type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={(e) => e.key === 'Enter' && handleAddScore()}
-        sx={{ mt: 2, input: { color: 'white' } }}
+        placeholder="Enter points"
+        className="input-field"
       />
-      <Button variant="contained" color="primary" onClick={handleAddScore} sx={{ mt: 3 }}>
-        Add Score
-      </Button>
-      <Button variant="contained" color="secondary" onClick={handleDeclareWinner} sx={{ mt: 3, ml: 1 }}>
-        Declare Winner
-      </Button>
-      <Box component="ul" sx={{ listStyleType: 'none', p: 0, mt: 3 }}>
+      <button onClick={handleAddScore} className="add-score-btn">Add Score</button>
+      <button onClick={handleDeclareWinner} className="declare-winner-btn">Declare Winner</button>
+      <ul>
         {players.map((player, index) => (
-          <Box component="li" key={index} sx={{ mb: 1 }}>
-            <Typography variant="body1">{player.name}: {player.score} points</Typography>
-          </Box>
+          <li key={index}>
+            {player.name}: {player.score} points
+          </li>
         ))}
-      </Box>
-    </Box>
+      </ul>
+    </div>
   );
 };
 

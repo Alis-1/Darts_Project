@@ -16,6 +16,10 @@ h1 {
   font-size: 60px;
 }
 
+h2 {
+  font-size: 30px;
+}
+
 #gamemode {
   padding: 10px; 
   border-radius: 10px; 
@@ -70,6 +74,27 @@ input {
   color: white;
   height: 75vh; /* Increased height to display all players */
   overflow-y: auto; /* Add scroll if content overflows */
+}
+
+/* Typography */
+.current-player {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+
+.add-score-btn {
+  margin-top: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.declare-winner-btn {
+  margin-top: 20px;
+  margin-left: 5px;
+  background-color: red;
 }
 
 button {
