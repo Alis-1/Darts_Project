@@ -1,9 +1,7 @@
-#app {
+body {
   width: 80%;
   height: 80vh;
   margin: 0 auto;
-  border: 2px solid #000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -12,11 +10,6 @@
   background-size: cover; /* Kuva täyttää koko taustan */
   background-position: center; /* Kuva keskitetään */
   background-repeat: no-repeat; /* Kuva ei toistu */
-}
-
-body {
-  background-color: #333; /* Tummanharmaa väri */
-  color: white;
 }
 
 h1 {
@@ -30,11 +23,10 @@ h1 {
   margin: 10px; 
   transition: box-shadow 0.3s ease-in-out;
   position: absolute;
-  top: 10px;
-  left: 200px;
-  background-color: #444;
+  top: 50px;
+  left: 80px;
+  background-color: #000000;
   color: white;
-  border: 2px solid #000;
 }
 
 #gamemode:hover {
@@ -48,11 +40,10 @@ h1 {
   margin: 10px; 
   transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
   position: absolute;
-  background-color: #444;
+  background-color: #000000;
   color: white;
-  border: 2px solid #000;
-  top: 170px;
-  left: 200px;
+  top: 220px;
+  left: 80px;
   overflow-y: auto;
 }
 
@@ -73,18 +64,17 @@ input {
   margin: 10px; 
   transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
   position: absolute;
-  top: 1px;
-  right: 195px;
-  background-color: #444; /* Dark background */
+  top: 50px;
+  right: 140px;
+  background-color: #000000; /* Dark background */
   color: white;
-  border: 2px solid #000; /* Dark border */
   height: 75vh; /* Increased height to display all players */
   overflow-y: auto; /* Add scroll if content overflows */
 }
 
 button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #ff8000;
   color: white;
   border: none;
   border-radius: 4px;
@@ -92,5 +82,5 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #b35100;
 }
